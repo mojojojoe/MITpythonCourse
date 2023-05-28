@@ -1,33 +1,34 @@
 
-def  get_max(lst):
-    i = 0
+def get_max(lst):
+""" Should take an item and return the index if the m
+A WIP, still needs to be finished
+"""
+    index[]
+    sorted[]
     max = 0
-    while i < len(lst):
-        if lst[i] > max:
-            max = lst[i]
-            print(max)
-            lst[i] = -1
-        i = i + 1
-        print(max)
-        return max
+    i = 0
+    for item in lst:
+        if item > max:
+            max = item
+        sorted[i] = max
+        i += 1
 
-def sort():
-    j = 1
+def gather_input():
+    j = 0
     _list_ = []
     while j < 6:
         _list_.append(int(input("number?")))
-        j = j + 1
-    print(_list_)
-    print(len(_list_))
-    k = 1
-    sorted = []
-    while k < len(_list_) + 1:
-        sorted.append(get_max(_list_))
-        k = k + 1
-    return sorted
+        j += 1
+    return _list_
+#print("list ", _list_)
+#print("length of list ", len(_list_))
+
+def sort(list):
+    max, index = get_max(list)
+
 
 def __main__():
-    print(sort())
+    print(sort(gather_input()))
 
 if __name__ == '__main__':
     __main__()
