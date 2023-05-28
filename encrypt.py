@@ -1,6 +1,3 @@
-def inc(incremand):
-    return incremand + 1
-
 def get_key(passwd):
     hsh = hash(passwd)
     return hsh % 541
