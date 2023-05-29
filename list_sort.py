@@ -1,33 +1,30 @@
-
-def  get_max(lst):
-    i = 0
+# noinspection PyStatementEffect
+def find_max(_list):
     max = 0
-    while i < len(lst):
-        if lst[i] > max:
-            max = lst[i]
-            print(max)
-            lst[i] = -1
-        i = i + 1
-        print(max)
-        return max
+    i = 0
+    while _list[i]:
+        if _list[i] > max:
+            max = _list[i]
+            _list[i] = -1
+        i += 1
+    return max
 
-def sort():
+def collect_list():
+    _list = []
     j = 1
-    _list_ = []
     while j < 6:
-        _list_.append(int(input("number?")))
-        j = j + 1
-    print(_list_)
-    print(len(_list_))
-    k = 1
+        _list.append(int(input("number?")))
+        j += 1
+    return _list
+
+def sort(list):
     sorted = []
-    while k < len(_list_) + 1:
-        sorted.append(get_max(_list_))
-        k = k + 1
+    while list:
+       sorted.append(find_max(list))
     return sorted
 
 def __main__():
-    print(sort())
+    sort(collect_list())
 
 if __name__ == '__main__':
     __main__()
