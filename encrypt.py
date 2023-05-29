@@ -17,15 +17,13 @@ def process_password(key):
         exit(0)
 
 def loop_for_password(key):
-    i = False
     j = 0
     while j < 3:
         i = process_password(key)
-        if i == False:
-            j = j + 1
+        if not i:
+            j += 1
         else:
-            j = j + 3
-
+            j = 3
 
 def __main__():
     _KEY = get_key("Peter")

@@ -1,30 +1,34 @@
-# noinspection PyStatementEffect
-def find_max(_list):
+
+def get_max(lst):
+""" Should take an item and return the index if the m
+A WIP, still needs to be finished
+"""
+    index[]
+    sorted[]
     max = 0
     i = 0
-    while _list[i]:
-        if _list[i] > max:
-            max = _list[i]
-            _list[i] = -1
+    for item in lst:
+        if item > max:
+            max = item
+        sorted[i] = max
         i += 1
-    return max
 
-def collect_list():
-    _list = []
-    j = 1
+def gather_input():
+    j = 0
+    _list_ = []
     while j < 6:
-        _list.append(int(input("number?")))
+        _list_.append(int(input("number?")))
         j += 1
-    return _list
+    return _list_
+#print("list ", _list_)
+#print("length of list ", len(_list_))
 
 def sort(list):
-    sorted = []
-    while list:
-       sorted.append(find_max(list))
-    return sorted
+    max, index = get_max(list)
+
 
 def __main__():
-    sort(collect_list())
+    print(sort(gather_input()))
 
 if __name__ == '__main__':
     __main__()
