@@ -1,17 +1,17 @@
 
-def get_max(lst):
-""" Should take an item and return the index if the m
-A WIP, still needs to be finished
-"""
-    index[]
-    sorted[]
+def find_max(lst):
+    """ Take a list, get the max element by going over each item in the list and stashing the largest.
+    Otherwise, append the item to a new (reduced) list to return with the max.
+    """
+    sortlist = []
+    reduced = []
     max = 0
-    i = 0
     for item in lst:
         if item > max:
             max = item
-        sorted[i] = max
-        i += 1
+        else:
+            reduced.append(item)
+        return max, reduced
 
 def gather_input():
     j = 0
@@ -20,13 +20,13 @@ def gather_input():
         _list_.append(int(input("number?")))
         j += 1
     return _list_
-#print("list ", _list_)
-#print("length of list ", len(_list_))
 
 def sort(list):
-    max, index = get_max(list)
-
-
+    sorted_list = []
+    while list:
+        max, list = find_max(list)
+        sorted_list.append(max)
+    return sorted_list
 def __main__():
     print(sort(gather_input()))
 
