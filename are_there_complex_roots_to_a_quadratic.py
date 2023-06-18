@@ -3,7 +3,7 @@ import math
 
 class Quadratic:
     def __init__(self, x, y, z):
-        self.a = x
+        self.a = xi
         self.b = y
         self.c = z
     def print(self):

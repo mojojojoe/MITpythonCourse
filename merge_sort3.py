@@ -14,7 +14,7 @@ def split_merge(list):
     m = int(l / 2)
     L = []
     R = []
-    Mer = []
+    Mer = []1
     L, R = list[:m], list[m:] # split list
     while(len(L) != 1 or len(R) != 1):
         split_merge(L)
