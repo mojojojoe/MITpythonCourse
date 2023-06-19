@@ -1,37 +1,75 @@
+#!/usr/bin/env python3.11
+"""merge_sort and merge derived from chatGPT"""
+
 def merge_sort(arr):
     if len(arr) <= 1:
         return arr
 
-    mid = len(arr) // 2
-    left_half = arr[:mid]
-    right_half = arr[mid:]
+    m = len(arr) // 2
+    L = arr[:m]
+    R = arr[m:]
 
-    left_half = merge_sort(left_half)
-    right_half = merge_sort(right_half)
+    L = merge_sort(L)
+    R = merge_sort(R)
 
-    return merge(left_half, right_half)
+    return merge(L, R)
 
 
-def merge(left, right):
+def merge(L, R):
     merged = []
-    left_index = 0
-    right_index = 0
+    L_idx = 0
+    R_idx = 0
 
-    while left_index < len(left) and right_index < len(right):
-        if left[left_index] <= right[right_index]:
-            merged.append(left[left_index])
-            left_index += 1
+    while L_idx < len(L) and R_idx < len(R):
+        if L[L_idx] <= R[R_idx]:
+            merged.append(L[L_idx])
+            L_idx += 1
         else:
-            merged.append(right[right_index])
-            right_index += 1
+            merged.append(R[R_idx])
+            R_idx += 1
 
     # Append any remaining elements
-    while left_index < len(left):
-        merged.append(left[left_index])
-        left_index += 1
+    while L_idx < len(L):
+        merged.append(L[L_idx])
+        L_idx += 1
 
-    while right_index < len(right):
-        merged.append(right[right_index])
-        right_index += 1
+    while R_idx < len(R):
+        merged.append(R[R_idx])
+        R_idx += 1
 
     return merged
+
+
+def sort(M,args):
+    if isinstance(args, list):
+        return merge_sort(args)
+    else:
+        print("Error:args not a list")
+        return None
+
+
+def ask_for_list():
+    # n = int(input("How long is the list?\n"))
+    # D = []
+    # i = 0
+    # while n:
+    #     item = int(input("Enter the next list item\n"))
+    #     D.append(item)
+    #     n -= 1
+    D = [56, 72, 90, 100, 27, 982, 927, 2378, 287, 898, 90]
+    return D
+
+
+def main(args = None):
+    if not args:
+        ask = ask_for_list()
+        main(ask)
+    else:
+        M = []
+        M = sort(M,args)
+        if M:
+            print(M)
+
+
+if __name__ == '__main__':
+    main()
